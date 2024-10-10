@@ -24,16 +24,16 @@ export default defineUserConfig({
     // 添加您的部署域名
     // hostname: 'https://your_site_url',
 
-    // profile: {
-    //   name: 'Yskye',
-    //   description: '云书景的博客',
-    //   avatar: '/blogger.png',
-    //   //location: '您的位置',
-    //   //organization: '您的组织',
-    //   circle: true, // 是否为圆形头像
-    //   layout: 'right', // 个人信息在左侧还是右侧，'left' | 'right'
-    // },
-    // // 社交链接
+    profile: {
+      name: 'Yskye',
+      description: '云书景的博客',
+      avatar: '/blogger.png',
+      //location: '您的位置',
+      //organization: '您的组织',
+      circle: true, // 是否为圆形头像
+      layout: 'right', // 个人信息在左侧还是右侧，'left' | 'right'
+    },
+    // 社交链接
     social: [
       { icon: 'github', link: 'https://github.com/yunshujing' },
       { icon: 'bilibili', link: 'https://space.bilibili.com/214528017' },
