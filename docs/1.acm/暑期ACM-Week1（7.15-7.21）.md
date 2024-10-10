@@ -2,21 +2,21 @@
 <a name="mZ348"></a>
 ## 知识点
 <a name="IKJTJ"></a>
-## 基础程序设计技巧
+### 基础程序设计技巧
 <a name="vDief"></a>
-### 万能[头文件](#C++中的输入输出)
+#### 万能[头文件](#C++中的输入输出)
 `#include<bits/stdc++.h>`	
 <a name="rmRGk"></a>
-### while执行多次输入
+#### while执行多次输入
 `while (~scanf("%d", &n)) {} `
 <a name="qF3xF"></a>
-### 循环退出
+#### 循环退出
 `break`是指直接跳出本层循环<br />`continue`是指结束本次循环，但不跳出本层循环，进入下一次循环。
 <a name="b3vtI"></a>
-### scanf，printf & cin, cout
+#### scanf，printf & cin, cout
 `cin, cout`输入数据达到`1e6`或`1e7`后会变慢，则<br />    改为`scanf，printf `
 <a name="WUETi"></a>
-### int 初定义
+#### int 初定义
 `int`类型的表示范围（-231～231-1），<br />有一种比int更大的类型，称为`**long long**`，它的表示范围是-263～263-1，比-1019～-1019略窄。<br />n太大（n≤1012），超过了int类型的表示范围，输入输出的时候用 `%lld`，如：<br />`scanf("%lld",&a);`<br />`printf("%lld",a);`<br />注意：C++中的`cout`无法输出 `__int64`类型变量的值。[#求c(n,m)=n!/(m!*(n-m)!)](#求c(n,m)=n!/(m!*(n-m)!))
 ```c
 #define int long long
@@ -24,16 +24,16 @@
 #define ll long long
 ```
 <a name="v12K9"></a>
-### 开数组一般大小：
+#### 开数组一般大小：
 ```c
 const int N = 1e6 + 10;
 int a[N];
 ```
 <a name="gUiH8"></a>
-### 布尔型（bool）
+#### 布尔型（bool）
 **布尔型（bool）变量的值只有 真 （true) 和假 （false）。**<br />**应用：**<br />①布尔型变量可用于逻辑表达式，也就是“或”“与”“非”之类的逻辑运算和大于小于之类的关系运算，逻辑表达式运算结果为真或为假。<br />②`bool`可用于定义函数类型为布尔型，函数里可以有 return TRUE; return FALSE 之类的语句。<br />③布尔型运算结果常用于条件语句：<br />        `if (逻辑表达式){如果是 true 执行这里；}`<br />        `else{如果是 false 执行这里；}`<br />④`bool`输出：只有0为假，其他都为真
 <a name="PZZIO"></a>
-## 基本数据类型取值范围
+### 基本数据类型取值范围
 | type | size | 数值范围 |
 | --- | --- | --- |
 | 无值型void | 0byte | 无值域 |
@@ -53,10 +53,10 @@ int a[N];
 | long double | 8 byte |  |
 
 <a name="bg90q"></a>
-## 文件输入输出操作
+### 文件输入输出操作
 使用文件最简单的方法是使用输入输出重定向，只需要在main函数的入口处加入以下两条语句：<br />`freopen("input.txt","r",stdin);`<br />`freopen("output.txt","w",stdout);`<br />它将使得`scanf`从文件`input.tx`t读入，`printf`写入文件`output.txt`.
 <a name="LOWA2"></a>
-## 浮点数陷阱
+### 浮点数陷阱
 ```c
 #include <stdio.h>
 int main()
@@ -69,7 +69,7 @@ int main()
 ```
 **说明**对于i可以达到10.0，但永远不会与10相等，**所以for循环是一个死循环。**<br />对于float和dobule类型的数据不能直接用 ==和!=来比较大小，即不要测试精确的浮点型数值，需要用精度比较，来测试一个可接受的数值范围。如：<br />	`for(i=0;fabs(10-i)>1e-5;i+=0.1)`
 <a name="lSEBY"></a>
-## C++中的输入输出
+### C++中的输入输出
 1）输入输出流：<br />头文件：<br />`#include <iostream>`	头文件iostream包含了对输入输出流的定义<br />`#include<cstdio>` (_c++)_  ==  `#include<stdio.h>` (_c)_<br />`#include<cmath>`  (_c++)_   ==  `#include<math.h>` (_c)_<br />`using namespace std`	使用名字空间std<br />`cin`是输入流istream类对象，`>>`是提取运算符，存到a,b中<br />`cout`是输出流ostream类的对象，`<<`是插入运算符，按顺序输出，`endl`为换行<br />析取器（>>）从流中输入数据<br />插入器（<<）向流中输出数据
 ```c
 #include <iostream>  //头文件iostream包含了对输入输出流的定义
@@ -98,13 +98,13 @@ return 0;
 ```
 如果想再次使用`cin`和`cout`，是否要逐个把程序中的所有`fin`和`fout`替换为`cin`和`cout`<br />不用这么麻烦，只需要把`fin`和`fout`的声明语句去掉，并加上这样两行即可：<br />`#define fin cin`<br />`#define fout cout`
 <a name="fLCoD"></a>
-## 递归
+### 递归
 1、递归调用<br />2、递归出口
 <a name="TKu9l"></a>
-### 案例1：设计一个求阶乘的递归函数
+#### 案例1：设计一个求阶乘的递归函数
 1）形式化，写成一个函数，参数只有一个<br />令f(n) = n!<br />2）分解问题，尾递归，把n拿出来，子问题变成（n - 1）！<br />3）找到相似性，得到递推式<br />n!= (n - 1)!*n<br />f(n) = f(n - 1) * n<br />4）递归出口<br />n > n - 1 > n - 2 > n - 3 > ...... > 0
 <a name="EXr9l"></a>
-### 案例2：设计一个求解汉诺塔的递归函数
+#### 案例2：设计一个求解汉诺塔的递归函数
 1）形式化，写成一个函数，参数有4个
 ```c
 //把n给盘子从a柱移到c柱，借助中间柱b
@@ -143,7 +143,7 @@ void hanoi(int n, char a, char b, char c) {
 }
 ```
 <a name="V3muO"></a>
-### 案例3：字符串逆序
+#### 案例3：字符串逆序
 1）形式化，写成一个函数，参数有1个
 ```c
 //字符串s逆序
@@ -157,7 +157,7 @@ strcat(s + 1, ts);
 ```
 4）递归出口<br />n > n - 1 > n - 2 > n - 3 > ...... > 0
 <a name="umYsk"></a>
-### 案例4：x星球
+#### 案例4：x星球
 1）形式化，写成一个函数，参数有1个
 ```c
 //字符串s逆序
@@ -191,7 +191,7 @@ int f(int a, int b) {
 }
 ```
 <a name="T7c2W"></a>
-## 指针
+### 指针
 `&` ：取地址符 `&` 用于获取变量的内存地址。它可以被用于任何数据类型的变量，包括基本数据类型（如整型、浮点型等）和复合数据类型（如数组、结构体等）。<br />`*`为解引用符，解引用操作是指通过指针访问存储在其指向地址上的值。
 ```c
 #include<bits/stdc++.h>
@@ -213,9 +213,9 @@ int main() {
  }
 ```
 <a name="bw9EA"></a>
-## sort()基本使用方法
+### sort()基本使用方法
 <a name="iWkKv"></a>
-### sort()的定义
+#### sort()的定义
 `sort()`函数可以对给定区间所有元素进行排序。<br />它有三个参数`sort(begin, end, cmp)`:<br />`begin`为指向待`sort()`的数组的第一个元素的指针，<br />`end`为指向待`sort()`的数组的最后一个元素的下一个位置的指针，<br />`cmp`参数为排序准则，`cmp`参数可以不写，默认`从小到大`进行排序。<br />返回值：`无`<br />时间复杂度：`O(nlogn)`<br />排序范围：`[first,last)` 
 ```c
 int main() {
@@ -227,14 +227,14 @@ int main() {
 }
 ```
 <a name="frcqU"></a>
-### bool控制cmp自定义排序：
+#### bool控制cmp自定义排序：
 ```c
 bool cmp(int e1, int e2) {	//int 对应 int a[10]
     return e1 > e2;	//降序为true不交换，升序为false交换
 }
 ```
 <a name="undDX"></a>
-### 结构体排序
+#### 结构体排序
 `sort()`也可以对结构体进行排序，<br />比如我们定义一个结构体含有学生的姓名和成绩的结构体`Student`，<br />然后我们按照每个学生的成绩从高到底进行排序。首先我们将结构体定义为：
 ```c
 struct Student {
@@ -280,16 +280,16 @@ int main() {
 ```
 [#B3827[NICA #2] 高考组题](#B3827[NICA #2] 高考组题)
 <a name="TIwZQ"></a>
-## STL
+### STL
 `STL`是C语言标准中的重要组成部分<br />以模板类和函数的形式提供数据结构和算法优化<br />`STL`大致分为3类，容器，算法，迭代器<br />`STL`的主要组成部分<br />**容器**：用于存储数据集合的通用类模板，包括序列容器（如vector、list、deque）、关联容器（如set、multiset、map、multimap）和容器适配器（如stack、queue、priority_queue）。<br />**算法**：用于对容器中的元素进行各种操作的通用函数模板，例如排序、搜索、复制等。<br />**迭代器**：实现STL算法与容器交互所需的通用指针
 <a name="aXtPT"></a>
-### vector动态数组
+#### vector动态数组
 在 C++ 中，vector 是一个模板类，用于存储一个动态数组, 运行时根据需要改变数组大小<br />    `vector <数据类型> 变量名；`<br />e.g.  `vector a; ` 默认初始化，a为空 <br />e.g.  `vector b(a);` 用a定义b <br />e.g.  `vector a(100);` a有100个值为0的元素 <br />开辟空间后可以直接访问a[0]...a[99]，没有用`()`开辟则无法访问，会溢出
 <a name="VCCHY"></a>
-#### 多维数组
+###### 多维数组
 定义多维数组，例如定义一个二维数组 : `vector<int> a[MAXN];` <br />它的第一维大小是固定的`MAXN`，第二维是动态的。 <br />用这个方式，可以实现图的邻接表存储。
 <a name="KjgkY"></a>
-#### vector语法
+###### vector语法
 | 功能 | 例子 | 说明 |
 | --- | --- | --- |
 | 赋值 | a.push_back(100); | 在尾部添加元素 |
@@ -308,7 +308,7 @@ int main() {
 | 排序 | sort(a.begin(), a.end()); | 用函数sort排序，从小到大 |
 
 <a name="zBQSn"></a>
-#### 样例代码
+###### 样例代码
 ```c
 #include<bits/stdc++.h>
 using namespace std;
@@ -325,7 +325,7 @@ int main() {
 }
 ```
 <a name="owFuU"></a>
-#### 迭代器&&循环遍历
+###### 迭代器&&循环遍历
 迭代器`Iterator`是一种设计模式，在编程语言中用于访问容器的元素，而不需要暴露集合的内部表现方式。<br />迭代器提供了一种统一的方式来遍历不同类型的集合，使得代码更加灵活和可复用。<br />使用`*`操作符可以解压或展开迭代器或可迭代对象`Iterable`，将其内容依次提取出来。
 ```c
 vector<int>::iterator it;
@@ -335,12 +335,12 @@ for (auto it = a.begin(); it != a.end(); it++){}
     cout << *it;	//解引用符解迭代器
 ```
 <a name="NYuxU"></a>
-### auto语法
+#### auto语法
 <a name="bZjvW"></a>
-#### auto的定义
+###### auto的定义
 【auto】(自动识别类型)<br />在C++中，`auto`关键字是一个类型说明符，用于自动推导变量的类型。<br />这意味着编译器会根据变量的初始化表达式自动确定变量的类型，从而使得代码更加简洁，<br />特别是当处理复杂类型时。`auto`关键字是在C++11标准中引入的，之后被广泛应用于现代C++编程中。
 <a name="ILHkp"></a>
-#### auto的语法
+###### auto的语法
 规则1：声明为`auto`（不是`auto&`）的变量，忽视掉初始化表达式的顶层`const`。即对有`const`的普通类型(int 、double等)忽视`const`，对常量指针（顶层const）变为普通指针，对指向常量（底层const）的常量指针（顶层cosnt）变为指向常量的指针（底层const）。<br />规则2：声明为auto& 的变量，保持初始化表达式的顶层const或 volatile 属性。<br />规则3：若希望` auto`推导的是顶层`const`，加上const，即`const auto`。<br />[参考资料](https://blog.csdn.net/weixin_43744293/article/details/117440727)
 
 1. **[更喜欢用这个]**<br />`auto`会拷贝一份容器内的`veckor`,在修改x时不会改变原容器当中的`vector`值，只会改变拷贝的`vector`。`x`为元素可直接使用
@@ -359,7 +359,7 @@ for (auto& x : vector){}
 for (const auto& x : vector)
 ```
 <a name="jbwoG"></a>
-#### auto在编程时真正的用途
+###### auto在编程时真正的用途
 1、代替冗长复杂的变量声明<br />`vector<int>::iterator it = v.begin(); `直接用`auto`代替 `auto it = v.begin();`<br />2、定义模板参数时，用于声明依赖模板参数的变量
 ```c
 template <typename _Tx, typename _Ty>
@@ -369,7 +369,7 @@ void Multiply(_Tx x, _Ty y) {
 }
 ```
 <a name="wyHyX"></a>
-#### 使用reverse反向排列算法
+###### 使用reverse反向排列算法
 ```c
 #include<iostream>
 #include<vector>
@@ -393,12 +393,12 @@ int main()
 }
 ```
 <a name="qUsCH"></a>
-### stack栈
+#### stack栈
 <a name="zLAFO"></a>
-#### 栈的定义
+###### 栈的定义
 栈`Stack`是一种线性数据结构，其特点是只允许在一端进行插入和删除操作；<br />这一端被称为栈顶`top`，相对地，把另一端称为栈底`bottom`；<br />这种数据结构遵循后进先出`LIFO, Last In First Out`的原则。
 <a name="Q2uyS"></a>
-#### 栈的语法
+###### 栈的语法
 | 例子 | 说明 |
 | --- | --- |
 | stack< Type >s; | 定义栈，Type为数据类型，如int，foatchar等 |
@@ -409,10 +409,10 @@ int main()
 | s.empty(); | 检查栈是否为空，如果为空返回true.否则返回false |
 
 <a name="rWnHF"></a>
-#### 爆栈问题
+###### 爆栈问题
 栈需要用空间存储，存进栈的数组太大，那么总数会超过系统为栈分配的空间，就会爆栈，即栈溢出。<br />解决办法有两种 : <br />(1)在程序中调大系统的栈。依赖于系统和编译器。<br />(2)手工写栈。
 <a name="XVp0e"></a>
-#### P1427 小鱼的数字游戏
+###### P1427 小鱼的数字游戏
 **题目描述**<br />小鱼最近被要求参加一个数字游戏，要求它把看到的一串数字 $a_i$（长度不一定，以 $0$ 结束），记住了然后反着念出来（表示结束的数字 $0$ 就不要念出来了）。这对小鱼的那点记忆力来说实在是太难了，你也不想想小鱼的整个脑袋才多大，其中一部分还是好吃的肉！所以请你帮小鱼编程解决这个问题。<br />**输入格式**<br />一行内输入一串整数，以 $0$ 结束，以空格间隔。<br />**输出格式**<br />一行内倒着输出这一串整数，以空格间隔。<br />**样例 #1**<br />**样例输入 #1**
 ```c
 3 65 23 5 34 1 30 0
@@ -440,14 +440,14 @@ int main() {
 }
 ```
 <a name="yymrd"></a>
-# 解题集
+## 解题集
 <a name="fKDsv"></a>
-## 闰年判断
+### 闰年判断
 ```c
 if ((m%4==0&&m%100!=0)||m%400==0)
 ```
 <a name="F0cga"></a>
-## 找完全平方数
+### 找完全平方数
 ```c
 int main() {
 	for (int a  1; a <= 9; a++) {
@@ -459,7 +459,7 @@ int main() {
 ```
 可以用 **对比0.000001** 来判断是否为 **整数!!!**
 <a name="tOK62"></a>
-## 阶乘之和（末6位）
+### 阶乘之和（末6位）
 输入n，计算S=1!+2!+3!+…+n!的**末6位**（不含前导0）。n≤106。这里，n!表示前n个正整数之积。<br />**样例输入**
 ```c
 10
@@ -486,7 +486,7 @@ int main() {
 ```
 若逐个计算，则会发生**乘法溢出**，所以：<br />要计算只包含加法、减法和乘法的整数表达式除以正整数n的余数，可以在每步计算之后对n **取余**，结果不变。
 <a name="s6ikY"></a>
-## 求c(n,m)=n!/(m!*(n-m)!)
+### 求c(n,m)=n!/(m!*(n-m)!)
 ```c
 #include<bits/stdc++.h>	
 typedef unsigned long long ull;  //ll 2^63-1>>unsigned 2^64-1 变大一倍
@@ -509,7 +509,7 @@ ull f(int n) {
 }
 ```
 <a name="vKTz5"></a>
-## 孪生素数
+### 孪生素数
 ```c
 #include<cstdio>
 #include<iostream>     //输入输出流
@@ -551,7 +551,7 @@ bool isPrime(int x) {
 }
 ```
 <a name="rnCAl"></a>
-## 苹果和虫子
+### 苹果和虫子
 **Description**<br />小 B 喜欢吃苹果。她现在有 𝑚m（1≤𝑚≤1001≤m≤100）个苹果，吃完一个苹果需要花费 𝑡t（0≤𝑡≤1000≤t≤100）分钟，吃完一个后立刻开始吃下一个。现在时间过去了 𝑠s（1≤𝑠≤100001≤s≤10000）分钟，请问她还有几个完整的苹果？<br />**Input**<br />输入三个非负整数表示 𝑚,𝑡,𝑠m,t,s。<br />**Output**<br />输出一个整数表示答案。<br />**Sample 1**<br />**Input**
 ```c
 50 10 200
@@ -589,7 +589,7 @@ int main() {
 }
 ```
 <a name="bh5n6"></a>
-## Download Manager下载文件
+### Download Manager下载文件
 [**Download Manager**](https://vjudge.net/problem/HDU-3233)<br />佳佳下载了很多很多文件，比你想象的还要多。有人说他一次可以下载多达20000个文件。如果20000个文件同时共享有限的带宽，那么就会出现大问题，没有任何文件能够正常下载。因此，他使用了一个下载管理器。<br />如果有T个文件需要下载，下载管理器在下载文件时会采用以下策略：1. 下载管理器会给较小的文件更高的优先级，因此它会在启动时下载最小的n个文件。如果出现平分的情况，下载管理器会选择剩余字节较少的那个文件（用于下载）。我们假设至少有500兆比特/秒的带宽，这样n个文件就可以同时下载，而没有任何问题。2. 可用带宽由正在下载的所有文件平等共享。当一个文件完全下载后，其带宽立即分配给下一个文件。如果没有其他文件可供下载，则剩余的带宽将立即平等地分配给正在下载的所有其他文件。<br />根据每个文件的大小和完成百分比，您的任务是智能模拟下载管理器的行为，以找出下载所有文件所需的总时间。<br />**输入**<br />最多有10个测试用例。每个案例都以三个整数T(1 <= T <= 20000)、n(1 <= n <= 2000且1 <= n <= T)和B(50 <= B <= 1000)开始。其中B表示Jiajia可用的总带宽(以兆字节/秒为单位)。请注意，下载管理器总是并行下载n个文件，除非可用的可下载文件少于n个。接下来的T行中，每行包含一个非负浮点数S(小于20000，小数点后最多两位)和一个整数P(0 <= P <= 100)。这两个数字表示一个文件的大小为S兆字节，并且已经下载了P%。还需要注意的是，虽然理论上，文件的大小或剩余部分的大小以字节为单位时不可能是小数，但为了简化问题，请假设这种情况在本问题中是可能的。最后一个测试案例是T=n=B=0，不应进行处理。<br />**输出**<br />对于每个案例，打印出案例编号和下载所有文件所需的总时间，以小时为单位并保留两位小数。在每个测试案例的输出后打印一个空行。<br />**Sample**<br />**Input**
 ```c
 6 3 90
@@ -628,7 +628,7 @@ int main()
 }
 ```
 <a name="PPkis"></a>
-## sort排序输出&数字填补
+### sort排序输出&数字填补
 [**sort**](https://vjudge.net/problem/HDU-1425)<br />![image.png](https://cdn.nlark.com/yuque/0/2024/png/44491236/1721475142630-0b5b77b1-5ec2-4833-ac68-45e6eda0182d.png#averageHue=%23d6d6d6&clientId=u35b594e4-a675-4&from=paste&height=316&id=u741c23d0&originHeight=474&originWidth=920&originalType=binary&ratio=1.5&rotation=0&showTitle=false&size=32214&status=done&style=none&taskId=u17b6cddc-93c4-4341-a6e0-4750ea82b23&title=&width=613.3333333333334)<br />**参考代码**
 ```c
 #include<stdio.h>
@@ -655,9 +655,9 @@ int main()
 }
 ```
 <a name="CZHL7"></a>
-## 函数题
+### 函数题
 <a name="M9KNg"></a>
-### 任一大于 2 的偶数=两个质数之和
+#### 任一大于 2 的偶数=两个质数之和
 [哥德巴赫猜想](https://vjudge.net/problem/%E6%B4%9B%E8%B0%B7-P1304)<br />![image.png](https://cdn.nlark.com/yuque/0/2024/png/44491236/1721539679838-432c9153-c3a9-442f-ba46-481452dee159.png#averageHue=%23d9d9d8&clientId=u768f05fe-bf47-4&from=paste&height=578&id=u91cc2de2&originHeight=867&originWidth=917&originalType=binary&ratio=1.5&rotation=0&showTitle=false&size=52589&status=done&style=none&taskId=ua0906955-17b1-4263-a430-9e2a00bb279&title=&width=611.3333333333334)<br />**思路**<br />遍历所有的偶数，每个数再去从小到大去找两个质数之和，这里如果把判断质数也放到循环内的话，时间复 杂度为n^3，所以可以先预处理出n以内的数是否为质数，可将复杂度降低为n^2; <br />**参考代码**
 ```c
 #include<bits/stdc++.h>
@@ -729,7 +729,7 @@ bool isPrime(int x) {
 }
 ```
 <a name="XDTA0"></a>
-### 最大质因子序列
+#### 最大质因子序列
 [最大质因子序列](https://vjudge.net/problem/%E6%B4%9B%E8%B0%B7-B2138)<br />![image.png](https://cdn.nlark.com/yuque/0/2024/png/44491236/1721539842785-ce8701f9-e766-4f65-8b9d-d1cec7ebc878.png#averageHue=%23d7d7d7&clientId=u768f05fe-bf47-4&from=paste&height=393&id=uf66a8be5&originHeight=590&originWidth=922&originalType=binary&ratio=1.5&rotation=0&showTitle=false&size=36073&status=done&style=none&taskId=ud7449c8d-e8fc-4e5b-90ba-14b6938915d&title=&width=614.6666666666666)<br />**思路**<br />先预处理出 <br />**参考代码**
 ```c
 #include<bits/stdc++.h>
@@ -811,7 +811,7 @@ int panduan(int i) {
 }
 ```
 <a name="D3axe"></a>
-### 回文质数
+#### 回文质数
 [回文质数 Prime Palindromes](https://vjudge.net/problem/%E6%B4%9B%E8%B0%B7-P1217)<br />![image.png](https://cdn.nlark.com/yuque/0/2024/png/44491236/1721539954889-904d53db-ba48-4253-961b-fdd474d3ede2.png#averageHue=%23dcdcdb&clientId=u768f05fe-bf47-4&from=paste&height=1063&id=uf98671f5&originHeight=1596&originWidth=920&originalType=binary&ratio=1.5&rotation=0&showTitle=false&size=106566&status=done&style=none&taskId=u4a3f943c-ff0d-4ccf-8a41-c8f6c8fa2b0&title=&width=613)<br />**思路**<br />先枚举区间内所有奇数，再将回文数用v数组存起来，然后遍历v数组，判断是否是质数。 <br />**参考代码**
 ```c
 #include<bits/stdc++.h>
@@ -887,7 +887,7 @@ bool huiwen(int x) {
 }
 ```
 <a name="zjhtx"></a>
-### 古老的密码
+#### 古老的密码
 [古老的密码](https://vjudge.net/problem/UVA-1339)<br />古罗马帝国拥有强大的政府体系，设有多个部门，包括特勤局部门。重要文件以加密形式在各省和首都之间发送，以防止窃听。当时最流行的密码是所谓的替换密码和置换密码。替换密码将每个字母的所有出现更改为其他字母。所有字母的替代物必须不同。对于某些字母，替换字母可能与原始字母重合。例如，应用替换密码，将所有字母从“A”更改为“Y”，将字母表中的下一个字母更改为“A”，并将“Z”更改为消息“VICTORIOUS”，则得到消息“WJDUPSJPVT”。排列密码对消息的字母应用一些排列。例如，将排列 ⟨2、1、5、4、3、7、6、10、9、8⟩ 应用于消息“VICTORIOUS”，则得到消息“IVOTCIRSUO”。人们很快注意到，如果单独应用，替换密码和置换密码都相当弱。但是当它们结合在一起时，它们在那个时代足够强大。因此，最重要的消息首先使用替换密码进行加密，然后使用排列密码对结果进行加密。使用上述密码的组合对消息“VICTORIOUS”进行加密，可以得到消息“JWPUDJSTVP”。考古学家最近发现了刻在一块石板上的信息。乍一看，这似乎完全没有意义，因此建议使用一些替换和排列密码对消息进行加密。他们已经推测出加密的原始消息的可能文本，现在他们想检查他们的猜想。他们需要一个计算机程序来做到这一点，所以你必须编写一个。<br />**Input**<br />输入文件包含多个测试用例。它们中的每一个都由两行组成。第一行包含刻在板上的信息。在加密之前，所有空格和标点符号都被删除了，因此加密的消息只包含英文字母的大写字母。第二行包含原始消息，推测该消息在第一行的消息中被加密。它还仅包含英文字母的大写字母。输入文件的两行长度相等，不超过 100。<br />**Output**<br />对于每个测试用例，打印一行输出。如果输入文件第一行的消息可能是加密第二行消息的结果，则输出“YES”，或者在另一种情况下输出“NO”。<br /> **Sample Input**
 ```c
 JWPUDJSTVP
@@ -975,7 +975,7 @@ int main() {
 }
 ```
 <a name="Rs5Sg"></a>
-### 刽子手游戏
+#### 刽子手游戏
 [刽子手游戏](https://vjudge.net/problem/UVA-489)<br />在“刽子手法官”中，你要编写一个程序来评判一系列的刽子手游戏。对于每个游戏，都给出了谜题的答案以及猜测。规则与经典的刽子手游戏相同，给出如下：<br />1.参赛者试图通过一次猜一个字母来解决难题。<br />2.每次猜对时，单词中所有与猜想相符的字符都会被“翻转”。例如，如果你的猜测是“o”，而单词是“book”，那么解决方案中的两个“o”都将被计为“solved”。<br />3.每猜错一次，刽子手的图画就会加一笔，需要7笔才能完成。每个独特的错误猜测只对参赛者计一次。<br />![image.png](https://cdn.nlark.com/yuque/0/2024/png/44491236/1721542039337-9a21d7cd-2d60-412c-a357-f4f1be968584.png#averageHue=%23fafaf9&clientId=u768f05fe-bf47-4&from=paste&height=271&id=u0f7c09fb&originHeight=406&originWidth=234&originalType=binary&ratio=1.5&rotation=0&showTitle=false&size=7989&status=done&style=none&taskId=u5b318637-7f70-42ee-b4a1-b72621d0d73&title=&width=156)<br />4. 如果刽子手的抽奖在参赛者成功猜出单词的所有字符之前就完成了，则参赛者输了。<br />5. 如果参赛者在抽签完成之前已经猜出了单词的所有字符，则参赛者赢得比赛。<br />6. 如果参赛者没有猜出足够的字母来决定输赢，则参赛者将退出。<br />作为“刽子手裁判”，你的任务是确定每场比赛的参赛者是赢、输还是没完成一场比赛。<br />**Input**<br />您的程序将获得一系列有关游戏状态的输入。所有输入都将为小写。每个部分的第一行将包含一个数字，以指示正在进行哪一轮游戏;下一行将是谜题的答案;最后一行是参赛者做出的一系列猜测。整数“-1”表示所有游戏（和输入）的结束。<br />**Output**<br />程序的输出是指示参赛者当前正在玩的游戏回合以及游戏的结果。有三种可能的结果：<br />You win. <br />You lose. <br />You chickened out.  <br />**Sample Input  **
 ```c
 1
@@ -1038,7 +1038,7 @@ signed main()
 }
 ```
 <a name="Dqnpr"></a>
-### 救济金发放
+#### 救济金发放
 [救济金发放](https://vjudge.net/problem/UVA-133)<br />为了缩小（减少）救济金队列的认真尝试，新国家绿色工党犀牛党决定采取以下策略。每天，所有救济金申请者将被安排在一个大圆圈中，面朝内。某人被任意选为数字 1，其余的人逆时针编号到 N（谁将站在 1 的左边）。从 1 开始，逆时针移动，一名劳工官员计算 k 名申请人，而另一名官员从 N 开始，顺时针移动，计算 m 名申请人。被选中的两人然后被送去接受再培训;如果两个官员都选择了同一个人，她（他）就会被派去当政治家。然后，每个官员都开始在下一个可用的人处再次计数，该过程继续进行，直到没有人离开。请注意，两名受害者（对不起，练习生）同时离开擂台，因此一名官员可以计算另一名官员已经选定的人。<br />** Input  **<br />编写一个程序，该程序将依次（按此顺序）读取三个数字（N、k 和 m;k、m > 0、0 < N < 20），并确定申请人被送去接受再培训的顺序。每组三个数字将位于一条单独的线上，数据的结束将由三个零 （0 0 0） 表示。<br />** Output  **<br />对于每个三元组，输出一行数字，指定选择人员的顺序。每个数字都应位于 3 个字符的字段中。对于成对的数字，首先列出逆时针官员选择的人。用逗号分隔连续的对（或单例）（但不应有尾随逗号）。注意：下面样本输出中的符号 ⊔ 代表一个空格。<br />** Sample Input  **
 ```c
 10 4 3
@@ -1085,7 +1085,7 @@ int main()
 }
 ```
 <a name="kMNbL"></a>
-### 歌唱比赛
+#### 歌唱比赛
 [歌唱比赛](https://vjudge.net/problem/%E6%B4%9B%E8%B0%B7-P5738)<br />![image.png](https://cdn.nlark.com/yuque/0/2024/png/44491236/1721542839207-c9c6ba8f-7917-4ac7-b358-1166ee4c8a66.png#averageHue=%23d6d6d6&clientId=u768f05fe-bf47-4&from=paste&height=654&id=ua066f58f&originHeight=981&originWidth=1146&originalType=binary&ratio=1.5&rotation=0&showTitle=false&size=96036&status=done&style=none&taskId=uc06d741f-800c-4077-b076-e15f6cce1bd&title=&width=764)<br />**思路**<br />模拟即可<br />**参考代码**
 ```c
 #include<bits/stdc++.h>
@@ -1147,7 +1147,7 @@ int main() {
 }
 ```
 <a name="uwSJu"></a>
-### 最厉害的学生
+#### 最厉害的学生
 [最厉害的学生](https://vjudge.net/problem/%E6%B4%9B%E8%B0%B7-P5740)<br />![image.png](https://cdn.nlark.com/yuque/0/2024/png/44491236/1721543081506-67f70599-0fc1-461a-820b-dbdbf1471f5a.png#averageHue=%23d4d4d4&clientId=u768f05fe-bf47-4&from=paste&height=729&id=u22ee0ef0&originHeight=1093&originWidth=1146&originalType=binary&ratio=1.5&rotation=0&showTitle=false&size=131335&status=done&style=none&taskId=ue4240e35-1110-4bb8-9d71-8fc1a39ae0a&title=&width=764)<br />**思路**<br />模拟即可<br />**参考代码**
 ```c
 #include<stdio.h>
@@ -1204,9 +1204,9 @@ int main() {
 }
 ```
 <a name="kkkuS"></a>
-## 递归题
+### 递归题
 <a name="f9jJ5"></a>
-### 汉诺塔问题
+#### 汉诺塔问题
 [汉诺塔问题](https://vjudge.net/problem/OpenJ_NOI-CH0202-6261)<br />![image.png](https://cdn.nlark.com/yuque/0/2024/png/44491236/1721543469244-1173947a-d206-42f6-99a8-7dda91a945ad.png#averageHue=%23d1d1d1&clientId=u768f05fe-bf47-4&from=paste&height=721&id=u64fcbf5f&originHeight=1081&originWidth=1261&originalType=binary&ratio=1.5&rotation=0&showTitle=false&size=182889&status=done&style=none&taskId=uc088e07d-f6f0-4d8a-af83-4732375dfa0&title=&width=840.6666666666666)<br />**思路**<br />当n为1时，直接将该盘移到目标柱，当n大于1时，将上面的n-1个借助目标柱移到辅助柱，将最后一个移到 目标柱后再将n-1个柱移动到目标柱。<br />**参考代码**
 ```c
 #include<bits/stdc++.h>
@@ -1235,7 +1235,7 @@ int main()
 }
 ```
 <a name="WkbeF"></a>
-###  新汉诺塔
+####  新汉诺塔
 [新汉诺塔](https://vjudge.net/problem/%E6%B4%9B%E8%B0%B7-P1242)<br />![image.png](https://cdn.nlark.com/yuque/0/2024/png/44491236/1721543704408-1b22b42f-d41d-4031-b813-c5bd7f2e5b08.png#averageHue=%23d5d5d5&clientId=u768f05fe-bf47-4&from=paste&height=843&id=uab8b46e6&originHeight=1265&originWidth=863&originalType=binary&ratio=1.5&rotation=0&showTitle=false&size=95477&status=done&style=none&taskId=u85a7da44-92a0-4426-b73d-f91e81466a8&title=&width=575.3333333333334)<br />**思路** <br />我们可以考虑一下怎么才从初始的变到最终的答案. 首先我们可以想到需要从大到小依次归位,因为如果先归位小的 圆盘.如果后续还需要归位大的圆盘,我们需要对其进行移动,因此我们需要从大到小归位. <br />我们可以把归位的过程简单分为两步 1 把所有在目标点上的比该圆盘小的数移开, 2 把该圆盘移动到目标点; 重复操 作 但这就是最优的吗并不一定,因为我们起初的部分是一个恢复成一个常规汉诺塔操作的过程,因此我们实际上并不 止这一种恢复常规汉诺塔的方法,我们可以换一种方法 可以简单分为四步 1.把所有在另一个非目标点的圆柱上的比 该圆盘小的数移开 2.该圆盘移到另一个非目标点的圆柱上, 3把所有在目标点上的比该圆盘小的数移开, 4把该圆盘移 动到目标点; <br />我们会发现两种方法的12和34是相同的,因此我们只需要对最大的进行操作就可以了,然后先进行一次不输出结果的递归,查看各自所需要的步数,选择较小的输出方法 <br />**参考代码**
 ```c
 #include <bits/stdc++.h>
@@ -1301,7 +1301,7 @@ int main() {
 }
 ```
 <a name="ojgE2"></a>
-### 通天之汉诺塔
+#### 通天之汉诺塔
 [通天之汉诺塔](https://vjudge.net/problem/%E6%B4%9B%E8%B0%B7-P1760)<br />![image.png](https://cdn.nlark.com/yuque/0/2024/png/44491236/1721543826177-7bd8ba11-4b6d-42a3-875e-fbd8e75486fc.png#averageHue=%23d5d5d5&clientId=u768f05fe-bf47-4&from=paste&height=667&id=u0fa96677&originHeight=1000&originWidth=856&originalType=binary&ratio=1.5&rotation=0&showTitle=false&size=73360&status=done&style=none&taskId=u325fd903-5bd1-486d-87e3-602b4918d80&title=&width=570.6666666666666)<br />**思路**<br />容易得到答案是2^n-1，本题的n很大，可以用python或者java的大数类，也可以用c++模拟高精度。<br /> **参考代码**
 ```c
 #include<bits/stdc++.h>
@@ -1365,7 +1365,7 @@ int main(){
 } 
 ```
 <a name="WVslj"></a>
-### 赦免战俘
+#### 赦免战俘
 [赦免战俘](https://vjudge.net/problem/%E6%B4%9B%E8%B0%B7-P5461)<br />![image.png](https://cdn.nlark.com/yuque/0/2024/png/44491236/1721544178894-817150ce-1109-46ad-90ca-c2842a39d31d.png#averageHue=%23d4d4d4&clientId=u768f05fe-bf47-4&from=paste&height=625&id=u9decafc3&originHeight=937&originWidth=1028&originalType=binary&ratio=1.5&rotation=0&showTitle=false&size=75475&status=done&style=none&taskId=u3ca4a98c-4276-4824-b668-506e8ad69e8&title=&width=685.3333333333334)<br />**思路**<br />每次递归找到要操作的正方形，直到不能继续分下去。<br />**参考代码**
 ```c
 #include<bits/stdc++.h>
@@ -1447,7 +1447,7 @@ void Sm(int n, int ii, int jj){
 }
 ```
 <a name="feeIr"></a>
-### 数的计算
+#### 数的计算
 [数的计算](https://vjudge.net/problem/%E6%B4%9B%E8%B0%B7-P1028)<br />![image.png](https://cdn.nlark.com/yuque/0/2024/png/44491236/1721544367941-9272f354-62d1-4261-848e-dad7b0a0082f.png#averageHue=%23d6d6d6&clientId=uf77041ae-e74f-4&from=paste&height=876&id=u841c39a9&originHeight=1314&originWidth=765&originalType=binary&ratio=1.5&rotation=0&showTitle=false&size=90625&status=done&style=none&taskId=u5e78322d-6672-44e0-8a79-d91326b7e54&title=&width=510)<br />**参考代码**
 ```c
 #include<bits/stdc++.h>
@@ -1518,7 +1518,7 @@ long long f(int n) {
 }
 ```
 <a name="rzoEd"></a>
-#### 记忆化搜索
+###### 记忆化搜索
 ```c
 // 递归函数，使用记忆化避免重复计算  
 long long f(int n) {
@@ -1541,9 +1541,9 @@ long long f(int n) {
 ```
 [更多解释请看参考资料](https://oi-wiki.org/dp/memo/)<br />[记忆化搜索（2）](#记忆化搜索(2))
 <a name="gCi3n"></a>
-## 结构体与STL入门
+### 结构体与STL入门
 <a name="fnKDB"></a>
-### 旗鼓相当的对手
+#### 旗鼓相当的对手
 [**旗鼓相当的对手**]()<br />![image.png](https://cdn.nlark.com/yuque/0/2024/png/44491236/1721474105760-b1078066-af46-4a6b-8970-0f64f042a402.png#averageHue=%23d7d5d4&clientId=u35b594e4-a675-4&from=paste&height=686&id=u18c6f74c&originHeight=1029&originWidth=929&originalType=binary&ratio=1.5&rotation=0&showTitle=false&size=94424&status=done&style=none&taskId=u1cf13f45-4675-4322-9fcd-f46999ce704&title=&width=619.3333333333334)<br />**解题思路**<br />录入每位同学的数据，遍历比较两个人每门课的差值和总分的差值，符合条件的两个人进行名字的字母大小进行排序输出。<br />**注意**<br />比较的是同学的名字的字母大小，用`char name[9];`进行存储比较；一开始我直接用`string`输入名字字符串，后比较输入顺序而导致错误。<br />**参考代码**
 ```c
 #include<iostream>
@@ -1618,7 +1618,7 @@ bool cmp(student e1, student e2) {
 }
 ```
 <a name="SrbaN"></a>
-### 第五人格之封禁出生密码机
+#### 第五人格之封禁出生密码机
 [**第五人格之封禁出生密码机**](https://vjudge.net/problem/%E6%B4%9B%E8%B0%B7-B3679)<br />![image.png](https://cdn.nlark.com/yuque/0/2024/png/44491236/1721474167163-778142fe-f2ab-41c3-8484-1907b930ff68.png#averageHue=%23d8d7d6&clientId=u35b594e4-a675-4&from=paste&height=1335&id=u39e8d18b&originHeight=2003&originWidth=915&originalType=binary&ratio=1.5&rotation=0&showTitle=false&size=182563&status=done&style=none&taskId=ua1eac5ee-efa6-4802-a6b2-8e1f966b801&title=&width=610)<br />**解题思路**<br />总共有n个密码机 ， k个出生密码机， t个监管者出生点<br />我们需要去求的是多少 有几个监管者的出生点可以 封禁 出生密码机<br />将所有坐标存入结构体，然后计算距离找出最远的几个点，在找出其中标号最小的点，然后与出生密码机比较，然后求解就好。<br />**注意**<br />不要用`double`类型 ，因为`double`再算距离的时候会造成精度不准确，算不出相等，所以在算距离的时候 不用开根号，直接进行比较<br />封禁不能单独提出来计算，否则重复只会计算一次，要在每个监管者封禁时都对出生密码机遍历一遍<br />**参考代码**
 ```c
 #include<iostream>
@@ -1716,7 +1716,7 @@ int jl(int x1, int y1, int x2, int y2) {
 }
 ```
 <a name="Pyk6w"></a>
-### 演唱会
+#### 演唱会
 [演唱会](https://vjudge.net/problem/%E6%B4%9B%E8%B0%B7-B3784)<br />![image.png](https://cdn.nlark.com/yuque/0/2024/png/44491236/1721544807668-8bbaebfc-0823-497f-81f7-7adea0246af9.png#averageHue=%23d2d2d2&clientId=uf77041ae-e74f-4&from=paste&height=761&id=u665fa2d9&originHeight=1142&originWidth=576&originalType=binary&ratio=1.5&rotation=0&showTitle=false&size=102640&status=done&style=none&taskId=u5df4afc5-7f4d-4dac-8080-741f249acb5&title=&width=384)<br />**题意**<br />总共n首歌 挑选m首歌 a个学生  b为zyl的学号<br />按照欢乐度排序 ，该歌曲欢乐度 = sum（a个学生 对于该首歌曲的 欢乐值）<br />特殊要求：<br />若 zyl 最喜欢的歌，被选上则排第一名<br />若没选上，则替换最后一名<br />1 <= m <= n <= 1e5<br />1 < b < a <100<br />**参考代码**
 ```c
 #include<bits/stdc++.h>
@@ -1835,7 +1835,7 @@ int main()
 }
 ```
 <a name="Yjipk"></a>
-### 第五人格之ban人
+#### 第五人格之ban人
 [BAN-PICK](https://vjudge.net/problem/%E6%B4%9B%E8%B0%B7-B3680)<br />![image.png](https://cdn.nlark.com/yuque/0/2024/png/44491236/1721545878988-a1965e2b-2517-413e-b27a-cf3d383916a4.png#averageHue=%23d0d0d0&clientId=uf77041ae-e74f-4&from=paste&height=899&id=ua3c04c69&originHeight=1349&originWidth=573&originalType=binary&ratio=1.5&rotation=0&showTitle=false&size=131221&status=done&style=none&taskId=uab0f7422-a84f-4836-bcee-ab4e45366a7&title=&width=382)<br />**题意**<br />给出不按照阵营顺序和熟练值=度顺序的 n+m 个 角色（包名字、阵营、熟练度）<br />要求：让我们将熟练度最高的 5个 S阵营删除后，找出最高熟练度的S阵营角色名<br />相应的 H阵营 只需删除2个角色 ，然后输出角色名称<br />`priority_queue<>`<br />先分类，然后进行结构体排序，可以直接用优先队列代替<br />数据范围：n < =1e3, m <= 1e3<br />**参考代码**
 ```c
 #include<bits/stdc++.h>
@@ -1920,7 +1920,7 @@ int main(){
 }
 ```
 <a name="Dendk"></a>
-### 高考组题
+#### 高考组题
 [**B3827[NICA #2] 高考组题**](https://vjudge.net/problem/%E6%B4%9B%E8%B0%B7-B3827)<br />![image.png](https://cdn.nlark.com/yuque/0/2024/png/44491236/1721474548277-43b8388a-481b-40e3-a92f-5f9328134ed7.png#averageHue=%23d8d7d6&clientId=u35b594e4-a675-4&from=paste&height=819&id=u8332ef0d&originHeight=1229&originWidth=918&originalType=binary&ratio=1.5&rotation=0&showTitle=false&size=88092&status=done&style=none&taskId=u4bf38b5b-90be-4564-85b4-d3cafdc4d23&title=&width=612)<br />**解题思路**<br />有n道题目 ， 找最重要的强两个，而有k个数的平均值表示为重要程度 ，若相同则选小号的；<br />**参考代码**
 ```c
 #include<bits/stdc++.h>
@@ -2005,9 +2005,9 @@ bool cmp(student e1, student e2) {
 }
 ```
 <a name="y9Pcj"></a>
-## STL-vector动态数组
+### STL-vector动态数组
 <a name="LMHz2"></a>
-### 狼人杀
+#### 狼人杀
 [狼人杀](https://vjudge.net/problem/HDU-4841)<br />![image.png](https://cdn.nlark.com/yuque/0/2024/png/44491236/1721546350900-07e51ff5-750a-4108-9e6d-bc9b6e436df6.png#averageHue=%23cccccc&clientId=uf77041ae-e74f-4&from=paste&height=691&id=udb2163fa&originHeight=1037&originWidth=1269&originalType=binary&ratio=1.5&rotation=0&showTitle=false&size=226919&status=done&style=none&taskId=u34700e56-5781-4af6-bb17-8ee397535fe&title=&width=846)<br />**参考代码**
 ```c
 #include<bits/stdc++.h>
@@ -2108,7 +2108,7 @@ int main() {
 }
 ```
 <a name="QqGeA"></a>
-### 情书
+#### 情书
 [情书](https://vjudge.net/problem/HDU-1062)<br />![image.png](https://cdn.nlark.com/yuque/0/2024/png/44491236/1721546549644-4e8ee41b-afe7-4a2d-9cd8-9d7db1450fab.png#averageHue=%23d5d5d5&clientId=uf77041ae-e74f-4&from=paste&height=708&id=u58b8b2d7&originHeight=1062&originWidth=1246&originalType=binary&ratio=1.5&rotation=0&showTitle=false&size=125653&status=done&style=none&taskId=u42435263-b6ff-4f30-b136-96ba975af14&title=&width=830.6666666666666)<br />**参考代码**
 ```c
 #include<bits/stdc++.h>
@@ -2188,7 +2188,7 @@ int main() {
 }
 ```
 <a name="kJCj7"></a>
-### 简单计算器
+#### 简单计算器
 [简单计算器](https://vjudge.net/problem/HDU-1237)<br />![image.png](https://cdn.nlark.com/yuque/0/2024/png/44491236/1721546698868-0a04c0fb-45d2-4cb7-b9a0-60ba1e2a0626.png#averageHue=%23d4d4d4&clientId=uf77041ae-e74f-4&from=paste&height=441&id=u6a811d28&originHeight=661&originWidth=1263&originalType=binary&ratio=1.5&rotation=0&showTitle=false&size=81096&status=done&style=none&taskId=u65732d0d-c65f-4ab1-a33a-0386875a8b2&title=&width=842)<br />**参考代码**
 ```c
 #include<bits/stdc++.h>
@@ -2271,7 +2271,7 @@ int main(){
 }
 ```
 <a name="JkOeN"></a>
-### 捉间谍
+#### 捉间谍
 [SPY](https://vjudge.net/problem/HDU-3527)<br />X Nation 的国家情报委员会收到一条可靠的信息，称 Y 国将派间谍窃取 X 国的机密文件。因此，国家情报委员会的指挥官立即采取措施，他将调查将进入NationX的人。同时，指挥官手里有两份名单，一份是Y国将要派往X国的间谍，另一份是X国之前派往Y国的间谍。这两个列表可能有一些重叠。因为间谍可能同时扮演两个角色，这意味着他可能是从X国派往Y国的人，所以我们只称这种类型为“双重间谍”。所以Y国可能会把“dual_spy”送回X国，现在很明显，这对X国有好处，因为“dual_spy”可以带回Y国的机密文件，而不用担心被Y国的边境扣留，所以指挥官决定没收Y国派来的那些，让老百姓和“dual_spy”同时进来。那么你能决定一个应该被指挥官抓住的名单吗？<br />A：该间谍列表包含将来到 NationX 前沿的内容。<br />B：该间谍列表包含将由 Nation Y发送。<br />C：该间谍列表包含之前发送给 NationY 。<br />**输入**<br />有几个测试用例。<br />每个测试用例包含四个部分，第一部分包含 3 个正整数 A、B、C，A 是将进入边界的数字。B 是 Nation Y 将要发送的号码，C 是 NationX 之前发送给 NationY 的号码。<br />第二部分包含 A 字符串，其名称列表将进入前沿。<br />第二部分包含 B 字符串，其名称列表由 NationY 发送。<br />第二部分包含C字符串，即“dual_spy”的名称列表。<br />每个测试用例后面都会有一个空行。<br />单个列表中不会有任何重复的名字，如果重复的名字出现在两个列表中，则它们意味着同一个人。<br />**输出**<br />输出指挥官应该抓到的名单（按名单B的出现顺序）.如果没有人应该被抓到，那么，你应该输出“没有敌方间谍”<br />**Sample**<br />**Input**
 ```c
 8 4 3
@@ -2341,7 +2341,7 @@ int main(){
 }
 ```
 <a name="DG61G"></a>
-### 写浏览器
+#### 写浏览器
 [Web Navigation](https://vjudge.net/problem/POJ-1028)<br />![image.png](https://cdn.nlark.com/yuque/0/2024/png/44491236/1721547325830-1df9d991-dcc3-4493-a1a8-b4d9bc7e6513.png#averageHue=%23d8d8d8&clientId=uf77041ae-e74f-4&from=paste&height=841&id=u4e530bb0&originHeight=1262&originWidth=755&originalType=binary&ratio=1.5&rotation=0&showTitle=false&size=51698&status=done&style=none&taskId=u46ac2094-042b-43ff-afbb-85cd34903f8&title=&width=503.3333333333333)<br />**参考代码**
 ```c
 #include<iostream>
@@ -2403,7 +2403,7 @@ int main(){
 }
 ```
 <a name="VNnzE"></a>
-### 小鱼的数字游戏
+#### 小鱼的数字游戏
 [小鱼的数字游戏](https://vjudge.net/problem/%E6%B4%9B%E8%B0%B7-P1427)<br />![image.png](https://cdn.nlark.com/yuque/0/2024/png/44491236/1721547463604-c7d5cb33-83b0-49fa-92b1-bb5555f5affe.png#averageHue=%23d6d6d6&clientId=uf77041ae-e74f-4&from=paste&height=529&id=uaa968148&originHeight=793&originWidth=920&originalType=binary&ratio=1.5&rotation=0&showTitle=false&size=58033&status=done&style=none&taskId=u3796f77d-1eaa-4f60-8b4d-fa90ffd958a&title=&width=613.3333333333334)<br />**参考代码**
 ```c
 #include<bits/stdc++.h>
@@ -2452,7 +2452,7 @@ int main() {
 }
 ```
 <a name="JCGw7"></a>
-### 字符串判定
+#### 字符串判定
 [Chat room](https://vjudge.net/problem/CodeForces-58A)<br />![image.png](https://cdn.nlark.com/yuque/0/2024/png/44491236/1721547639554-57b71dd2-fb5e-430c-a66f-41ed7c536fcc.png#averageHue=%23dbdbdb&clientId=uf77041ae-e74f-4&from=paste&height=490&id=ue137a5fb&originHeight=735&originWidth=916&originalType=binary&ratio=1.5&rotation=0&showTitle=false&size=38660&status=done&style=none&taskId=u63edbaf0-19c9-4040-a427-df5ce2d9874&title=&width=610.6666666666666)<br />**参考代码**
 ```c
 #include<bits/stdc++.h>
@@ -2519,7 +2519,7 @@ int main() {
 }
 ```
 <a name="hTxJr"></a>
-### 英雄联盟技能点
+#### 英雄联盟技能点
 [Doors and Keys](https://vjudge.net/problem/CodeForces-1644A)<br />![image.png](https://cdn.nlark.com/yuque/0/2024/png/44491236/1721547764862-fbdf1253-b222-4024-8990-e60e8aa9367f.png#averageHue=%23d2d2d2&clientId=uf77041ae-e74f-4&from=paste&height=811&id=uf11b18af&originHeight=1217&originWidth=919&originalType=binary&ratio=1.5&rotation=0&showTitle=false&size=119242&status=done&style=none&taskId=u07300ccb-d84b-4259-8c72-b34878f11ee&title=&width=612.6666666666666)<br />**解题代码**
 ```c
 #include<bits/stdc++.h>
@@ -2554,7 +2554,7 @@ int main() {
 }
 ```
 <a name="ByHQ9"></a>
-## 复读机
+### 复读机
 [**复读机**](https://vjudge.net/problem/%E6%B4%9B%E8%B0%B7-U261701)<br />![image.png](https://cdn.nlark.com/yuque/0/2024/png/44491236/1721471037359-c3d98170-cf58-4a11-9c4b-655bb8a1fcf6.png#averageHue=%23dbdada&clientId=u35b594e4-a675-4&from=paste&height=539&id=u988da436&originHeight=808&originWidth=927&originalType=binary&ratio=1.5&rotation=0&showTitle=false&size=47198&status=done&style=none&taskId=u789a0f26-fbf0-4e9c-a000-539adb74ec8&title=&width=618)<br />**参考代码**
 ```c
 #include <bits/stdc++.h>
@@ -2573,15 +2573,15 @@ int main()
 }
 ```
 <a name="YhGj6"></a>
-### substr()
+#### substr()
 <a name="GXmYB"></a>
-#### 定义
+###### 定义
 `substr()`是C++语言函数，主要功能是复制子字符串，要求从指定位置开始，并具有指定的长度。如果没有指定长度_Count或_Count+_Off超出了源字符串的长度，则子字符串将延续到源字符串的结尾。——摘自百科词条
 <a name="OJTcw"></a>
-#### 语法
+###### 语法
 `substr(size_type _Off = 0,size_type _Count = npos)`	//一种构造string的方法<br />**形式 **： `s.substr(pos, len)`<br />**返回值**：** **string，包含s中从pos开始的len个字符的拷贝（pos的默认值是0，len的默认值是s.size() - pos，即不加参数会默认拷贝整个s）<br />**异常**：若pos的值超过了string的大小，则substr函数会抛出一个out_of_range异常；若pos+n的值超过了string的大小，则substr会调整n的值，只拷贝到string的末尾
 <a name="BuGNr"></a>
-## 万里的成绩
+### 万里的成绩
 [**万里的成绩**](https://vjudge.net/problem/%E6%B4%9B%E8%B0%B7-U453182)<br />![image.png](https://cdn.nlark.com/yuque/0/2024/png/44491236/1721470989924-ac0cab17-2032-4d9f-b06d-854dfdbd9954.png#averageHue=%23d6d6d6&clientId=u35b594e4-a675-4&from=paste&height=797&id=uca12c753&originHeight=1196&originWidth=912&originalType=binary&ratio=1.5&rotation=0&showTitle=false&size=83978&status=done&style=none&taskId=ubf150356-7be2-4dd5-bc88-145c7296bc7&title=&width=608)<br />**解题思路**<br />姓名跟成绩要连在一起来排序，结构体，pair都可以，数组也行但麻烦很多。<br />**参考代码**
 ```c
 #include <bits/stdc++.h>
@@ -2617,7 +2617,7 @@ int main()
 }
 ```
 <a name="hZY5W"></a>
-### pair<T1,T2>
+#### pair<T1,T2>
 在C++中，`vector<pair<int, string>> v;` 是一个声明了一个包含 `pair<int, string>` 对的向量。这种数据结构允许你将两个不同类型的数据（例如整数和字符串）组合成一个单一的元素，并且可以方便地存储在一个动态数组中<br />具体来说，`pair<int, string>` 是一个标准模板库（STL）中的数据结构，用于存储两个不同类型的对象，其中第一个类型是 `int`，第二个类型是 `string`。而 `vector` 是另一个STL容器，它是一个动态数组，可以存储任意类型的元素<br />要使用这个向量，你可以通过以下方式初始化和操作它：
 ```c
 vector<pair<int, string>> v;
@@ -2642,17 +2642,17 @@ for (const auto& p : v) {
 ```
 总结起来，`vector<pair<int, string>> v;` 在C++中是一个非常有用的工具，能够让你以高效的方式存储和管理包含不同类型数据的对。
 <a name="KhbZc"></a>
-### 数组排序技巧
+#### 数组排序技巧
 ```c
 #define all(x) x.begin(),x.end()
 sort(all(v));//从小到大，上面定义了x.begin(),x.end(),x用v代替
 reverse(all(v));//从大到小，将数组倒序
 ```
 <a name="dD1V2"></a>
-### for(auto [x,y]:v)
+#### for(auto [x,y]:v)
 详见[auto语法](#auto的语法)
 <a name="Si75S"></a>
-## 自由删除组新序列
+### 自由删除组新序列
 [**Make Them Narrow**](https://vjudge.net/problem/AtCoder-abc361_c)<br />![image.png](https://cdn.nlark.com/yuque/0/2024/png/44491236/1721470937239-5487f7f7-aa4f-47bb-afc2-41fe770bc3f5.png#averageHue=%23d9d9d9&clientId=u35b594e4-a675-4&from=paste&height=787&id=ud8cb2353&originHeight=1180&originWidth=920&originalType=binary&ratio=1.5&rotation=0&showTitle=false&size=83203&status=done&style=none&taskId=u43e0a2e1-b7e2-4df2-9d1c-26c7132f200&title=&width=613.3333333333334)<br />**解题思路**<br />首先这题很容易想到贪心，但是实际上是不成立的，因为小的间隙的那边在去掉小间隙后可能来个巨大的间隙，例如
 ```c
 7 3
@@ -2681,10 +2681,10 @@ int main()
 }
 ```
 <a name="T9U9d"></a>
-### min()
+#### min()
 在C/C++中，`min()`函数用于比较两个或多个值，并返回其中最小的值，允许它应用于多种类型的数据。<br />以下同理可得`max()`、`max_element`等。
 <a name="d7lit"></a>
-#### 多个参数的min()
+###### 多个参数的min()
 对于多个参数的情况，可以使用标准库中的`std::min_element`函数或者直接使用`std::min`函数的变体：
 ```c
 #include <iostream>
@@ -2699,7 +2699,7 @@ int main() {
 }
 ```
 <a name="exODW"></a>
-#### 自定义比较器
+###### 自定义比较器
 如果需要对自定义类型进行最小值比较，可以使用自定义比较器：
 ```c
 #include <iostream>
@@ -2736,7 +2736,7 @@ int main()
 }
 ```
 <a name="UGuXX"></a>
-## 记忆化搜索(2)
+### 记忆化搜索(2)
 [**Function**](https://vjudge.net/problem/%E6%B4%9B%E8%B0%B7-P1464)<br />![image.png](https://cdn.nlark.com/yuque/0/2024/png/44491236/1721472337095-7c6c617a-94e0-476b-92ca-d96b236d728e.png#averageHue=%23dad9d9&clientId=u35b594e4-a675-4&from=paste&height=890&id=uf3a3b577&originHeight=1335&originWidth=923&originalType=binary&ratio=1.5&rotation=0&showTitle=false&size=103093&status=done&style=none&taskId=u6c5658f1-e429-4e39-865a-2e053d1c340&title=&width=615.3333333333334)<br />**解题思路**<br />**记忆化搜索(**[更多解释请看参考资料](https://oi-wiki.org/dp/memo/)**)**，算出一次w（x,y,z）后就不用再算了<br />**参考代码**
 ```c
 #include <cstdio>
@@ -2804,7 +2804,7 @@ int main()
 }
 ```
 <a name="o9ZwH"></a>
-## Keep it Beautiful
+### Keep it Beautiful
 [**Keep it Beautiful**](https://vjudge.net/problem/CodeForces-1841B)<br />![image.png](https://cdn.nlark.com/yuque/0/2024/png/44491236/1721473291773-d2149f5b-736b-4540-8df4-3dec5f58989b.png#averageHue=%23d7d6d5&clientId=u35b594e4-a675-4&from=paste&height=1261&id=u8e3fcaa5&originHeight=1892&originWidth=926&originalType=binary&ratio=1.5&rotation=0&showTitle=false&size=218043&status=done&style=none&taskId=udcb52307-93a2-4b9b-afba-6c234b6ab53&title=&width=617.3333333333334)<br />**解题思路**<br />把 a 首尾相连。如果不存在或只存在一对相邻的数，前面的数大于后面的，那么 a 就是「漂亮的」。<br />**参考代码**
 ```c
 #include <bits/stdc++.h>
