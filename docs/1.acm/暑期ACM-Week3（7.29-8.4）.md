@@ -4,6 +4,7 @@ createTime: 2024/08/05 22:00:00
 tags:
   - 学习
   - 代码
+permalink: /article/p073rs7n/
 ---
 <a name="lYPCh"></a>
 ## 贪心算法

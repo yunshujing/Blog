@@ -3,6 +3,7 @@ title: Markdown2
 tags:
   - markdown
 createTime: 2023/10/10 22:00:00
+permalink: /article/za450uyl/
 ---
 
 ## 1 Markdown语言简介

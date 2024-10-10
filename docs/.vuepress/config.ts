@@ -78,6 +78,7 @@ export default defineUserConfig({
         comment: true,
         repo: 'yunshujing/blog',
         repoId: 'R_kgDOM95uJw',
+        category: 'Announcements', 
         categoryId: 'DIC_kwDOM95uJ84CjOcI',
         mapping: 'pathname',
         reactionsEnabled: true,
