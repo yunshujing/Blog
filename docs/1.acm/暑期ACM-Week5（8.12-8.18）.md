@@ -1,3 +1,10 @@
+---
+title: 暑期ACM-Week5
+createTime: 2024/08/19 22:00:00
+tags:
+  - 学习
+  - 代码
+---
 <a name="hLNzz"></a>
 ## VScode配置包
 [**VScode配置包下载（sb_CSDN)**](http://47.120.76.63:5244/d/%E4%B8%AD%E5%9B%BD%E7%A7%BB%E5%8A%A8%E4%BA%91%E7%9B%98/%E5%88%86%E4%BA%AB%E7%9B%98/%E6%9A%91%E6%9C%9FACM%E9%9B%86%E8%AE%AD/VScode%E9%85%8D%E7%BD%AE2.zip?sign=p2kGET0ytn4nVh5T_yyx5SLtmMgltOfM1_WMnsdh4a4=:0)

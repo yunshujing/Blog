@@ -1,3 +1,10 @@
+---
+title: 暑期ACM-Week1
+createTime: 2024/07/22 22:00:00
+tags:
+  - 学习
+  - 代码
+---
 
 <a name="mZ348"></a>
 ## 知识点

@@ -1,3 +1,11 @@
+---
+title: 暑期ACM-Week6
+createTime: 2024/08/26 22:00:00
+tags:
+  - 学习
+  - 代码
+---
+
 <a name="dn7Mv"></a>
 ## 知识点
 <a name="KFvm6"></a>
