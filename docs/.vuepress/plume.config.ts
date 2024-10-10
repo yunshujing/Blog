@@ -14,7 +14,10 @@ export default defineThemeConfig({
   appearance: true,
 
   social: [
-    { icon: 'github', link: '/' },
+    // { icon: 'github', link: '/' },
+    { icon: 'github', link: 'https://github.com/vuepress-theme-plume' },
+    { icon: 'bilibili', link: 'https://space.bilibili.com/214528017' },
+
   ],
 
   locales: {

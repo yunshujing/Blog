@@ -24,21 +24,6 @@ export default defineUserConfig({
     // 添加您的部署域名
     // hostname: 'https://your_site_url',
 
-    profile: {
-      name: '您的名字',
-      description: '描述文字，座右铭/签名',
-      avatar: '/blogger.png',
-      location: '您的位置',
-      organization: '您的组织',
-      circle: true, // 是否为圆形头像
-      layout: 'right', // 个人信息在左侧还是右侧，'left' | 'right'
-    },
-    // 社交链接
-    social: [
-      { icon: 'github', link: 'https://github.com/vuepress-theme-plume' },
-      // ... more
-    ],
-
     plugins: {
       /**
        * Shiki 代码高亮
