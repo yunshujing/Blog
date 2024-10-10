@@ -15,8 +15,9 @@ export default defineThemeConfig({
 
   social: [
     // { icon: 'github', link: '/' },
-    { icon: 'github', link: 'https://github.com/vuepress-theme-plume' },
+    { icon: 'github', link: 'https://github.com/yunshujing' },
     { icon: 'bilibili', link: 'https://space.bilibili.com/214528017' },
+    { icon: 'qq', link: 'https://qm.qq.com/q/eYVgTUe7E4' },
 
   ],
 
