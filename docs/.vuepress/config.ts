@@ -34,10 +34,11 @@ export default defineUserConfig({
     //   layout: 'right', // 个人信息在左侧还是右侧，'left' | 'right'
     // },
     // // 社交链接
-    // social: [
-    //   { icon: 'github', link: 'https://github.com/yunshujing' },
-    //   // ... more
-    // ]
+    social: [
+      { icon: 'github', link: 'https://github.com/yunshujing' },
+      { icon: 'bilibili', link: 'https://space.bilibili.com/214528017' },
+      // ... more
+    ],
 
     plugins: {
       /**
