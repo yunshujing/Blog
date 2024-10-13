@@ -64,7 +64,7 @@ permalink: /article/tfpqfmif/
 
 
 
-<img alt="" height="940" src="assets/bb49097bd1f23460625af3a4d7941eaa.png)
+![](./assets/bb49097bd1f23460625af3a4d7941eaa.png)
 
 最后在输出窗口处直接获取到需要的有效数据！比起手操快的不是一星半点，学会这个才清楚自己比ak佬的差距！
 
