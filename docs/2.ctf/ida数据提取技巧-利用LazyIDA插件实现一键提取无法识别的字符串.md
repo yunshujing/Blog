@@ -22,9 +22,9 @@ permalink: /article/tfpqfmif/
 
 ### 插件链接
 
-在该GitHub仓库下载插件-&gt;
+在该GitHub仓库下载插件->[GitHub - P4nda0s/LazyIDA: Make your IDA Lazy!](https://github.com/P4nda0s/LazyIDA)
 
-如果你有访问GitHub速度极慢的问题，可以参考本篇-&gt;
+如果你有访问GitHub速度极慢的问题，可以参考本篇->[如何快速访问GitHub等国外资源网站？白嫖资源必备！_微软商店 github-CSDN博客](https://blog.csdn.net/liKeQing1027520/article/details/135915512)
 
 来到仓库后以压缩包形式完成下载
 
@@ -42,7 +42,7 @@ permalink: /article/tfpqfmif/
 
 ## 三，移动插件到ida的plugins目录下
 
-将第二步获取到的python文件移动（复制/剪切-&gt;粘贴）到ida的plugins目录中，
+将第二步获取到的python文件移动（复制/剪切->粘贴）到ida的plugins目录中，
 
 ![](./assets/db44cb14c6aae7ea76cf2ad44c4f8b6b.png)
 
@@ -58,9 +58,9 @@ permalink: /article/tfpqfmif/
 
 （这是一个题目清单、需要手动筛选后找到具体题目）
 
+<https://adworld.xctf.org.cn/challenges/list>
 
-
-在其中有一个字符串s2需要提取，使用鼠标选中要提取的内容-&gt;【**Convert**】-&gt;【**Convert to python list(BYTE)**】
+在其中有一个字符串s2需要提取，使用鼠标选中要提取的内容->【**Convert**】->【**Convert to python list(BYTE)**】
 
 
 
