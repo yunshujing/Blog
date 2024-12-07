@@ -4,6 +4,7 @@ createTime: 2024/11/6 22:00:00
 tags:
   - 学习
   - CTF
+  - 逆向
 permalink: /article/xncvhlzo/
 ---
 
