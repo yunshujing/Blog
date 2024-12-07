@@ -24,10 +24,10 @@ export default defineThemeConfig({
   locales: {
     '/': {
       profile: {
-        avatar: 'https://theme-plume.vuejs.press/plume.png',
+        avatar: 'https://img.picgo.net/2024/12/07/wallhaven-rrd721c1aa7ce8ae2b52c8.png',
         name: 'Yskye',
-        description: '云书景的博客',
-        // circle: true,
+        description: '云书景的学习笔记',
+        circle: true,
         // location: '',
         // organization: '',
       },
@@ -37,10 +37,10 @@ export default defineThemeConfig({
     },
     '/en/': {
       profile: {
-        avatar: 'https://theme-plume.vuejs.press/plume.png',
+        avatar: 'https://img.picgo.net/2024/12/07/wallhaven-rrd721c1aa7ce8ae2b52c8.png',
         name: 'Yskye',
-        description: '云书景的博客',
-        // circle: true,
+        description: '云书景的学习笔记',
+        circle: true,
         // location: '',
         // organization: '',
       },
